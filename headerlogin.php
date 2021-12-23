@@ -19,7 +19,7 @@
         <div class="bar2">
             <div id="header">
                 <div class="logo">
-                    <img height="100%" width="200px" src="pic/Untitled-2 copy.png" />
+                    <img height="100%" width="200px" src="Image/logocave.png"" />
                 </div>
                 <ul class="nav">
                     <!-- beggin : nav -->
