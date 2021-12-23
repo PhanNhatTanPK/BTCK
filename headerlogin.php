@@ -38,9 +38,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="http://localhost/Header/plan.php">Kế hoạch </a>
+                        <a href="">Kế hoạch </a>
                         <ul class="subnav">
-                        <li><a href="">Creat</a></li>
+                        <li><a href="http://localhost/Header/plan.php">Creat</a></li>
                         <li><a href="">Update</a></li>
                         </ul>
                     </li>
