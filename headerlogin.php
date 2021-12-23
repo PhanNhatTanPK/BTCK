@@ -40,7 +40,7 @@
                     <li>
                         <a href="">Kế hoạch </a>
                         <ul class="subnav">
-                        <li><a href="http://localhost/Header/plan.php">Creat</a></li>
+                        <li><a href="http://localhost/plan.php">Creat</a></li>
                         <li><a href="">Update</a></li>
                         </ul>
                     </li>
@@ -59,8 +59,8 @@
                                 ?>
                             </a>
                             <ul class="subnav">
-                                <li><a href="http://localhost/Header/Login1.php">THÔNG TIN CÁ NHÂN</a></li>
-                                <li><a href="http://localhost/Header/logout.php">ĐĂNG XUẤT</a></li>
+                                <li><a href="http://localhost/login.php">THÔNG TIN CÁ NHÂN</a></li>
+                                <li><a href="http://localhost/logout.php">ĐĂNG XUẤT</a></li>
                             </ul>
                         </li>
                     </ul>
