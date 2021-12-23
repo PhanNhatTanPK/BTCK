@@ -20,7 +20,7 @@
         <div id="header">        
             <div class="logo">
                 <img height="100%" width="200px"
-                  src="pic/Untitled-2 copy.png"/>
+                  src="Image/logocave.png"/>
                 </div>
             <ul class="nav">
                 <!-- beggin : nav -->
