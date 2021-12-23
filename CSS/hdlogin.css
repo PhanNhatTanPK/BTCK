@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+/* 1.từ trên xuống dưới 
+   2.từ ngoài vào trong 
+   3.từ tổng quan đến chi tiết 
+*/
+/* 1.vị trí 
+2.kích thước
+3.màu sắc 
+4.kiểu dáng(kiểu chữ, hình tròn , vuông ..) */
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* class chung */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-third{
+    width: calc(100%/3);
+}
+.col-half{
+    width: 50%;
+}
+.text-center{
+    text-align: center !important;
+}
+
+/* class main */
+
+#main{
+  
+}
+#header{
+    height: 80px;
+    background-color:black;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: #63464b;
+    position:fixed;
+    z-index:1;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+ 
+}
+
+.nav .tkb{
+   margin-left: 180px;
+}
+.nav, .subnav{
+    list-style: none;
+    
+}
+.nav > li {
+    display: inline-block;
+}
+.nav li {
+
+position: relative;
+}
+.nav >li> a{
+    color: white;
+}
+.nav li a {
+    text-decoration: none;
+    line-height: 80px;
+    padding: 0 24px;
+    display: block;
+}   
+.nav >li:hover> a{
+    color:white;
+    opacity: 0.5;
+}
+.nav >li:hover> a
+,.nav .subnav li:hover a{
+    border-radius: 5%;
+}
+.nav .subnav li:hover a{
+    color: white;
+    background-color: silver;
+    
+}
+.nav li:hover .subnav{
+    display: block;
+    
+}
+.nav .subnav{
+    position: absolute;
+    background-color: white;
+    box-shadow:  0 0 10px rgba(0 , 0 , 0 , 0.3);
+    display: none;
+    top: 100%;
+    left: 0;
+    border-radius: 5%;
+    width: 200px;
+}
+.nav .subnav a {
+color: black;
+width: 200px;
+padding: 0 12px
+
+}
+.nav{
+    display: inline-block;
+}
+
+/* taikhaon */
+.login{
+    float: right;
+    margin-right: 30px;
+}
+.ti-user{
+    margin-right: 10px;
+}
+.logo{
+    float: left;
+}
+.nav i {
+    margin-left: 20px;
+}
+/* chuyen hinh */
+
+ 
+
+
+
+
+/* footer */
