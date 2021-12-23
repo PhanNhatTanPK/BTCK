@@ -37,7 +37,7 @@
             <a href="">Danh sách lớp </a>
         </li>
            <li>
-            <a href="http://localhost/Header/plan.php">Kế hoạch </a>
+            <a href="http://localhost/plan.php">Kế hoạch </a>
             <ul class="subnav">
                 <li><a href="">Creat</a></li>
                 <li><a href="">Update</a></li>
@@ -50,8 +50,8 @@
                 <a href=""><i class="ti-user"></i>TÀI KHOẢN
             </a>
                 <ul class="subnav">
-                    <li><a href="http://localhost/Header/Login1.php">Đăng nhập</a></li>
-                    <li><a href="http://localhost/Header/SignUp.php">Đăng ký</a></li>
+                    <li><a href="http://localhost/Login.php">Đăng nhập</a></li>
+                    <li><a href="http://localhost/SignUp.php">Đăng ký</a></li>
          
                 </ul>
             </li>
