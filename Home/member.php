@@ -228,12 +228,15 @@ body {
             else $sql_member="select * from account limit $start, $limit";
 
             $run=$conn->query($sql_member);
-            
+            ?>
+        
+
+<div class="cards-container">
+
+        <?php    
             while($row=$run->fetch_array())
             {
         ?>
-
-<div class="cards-container">
     <div class="card card-one">
         <header>
             <div class="avatar">
@@ -262,7 +265,8 @@ body {
   <?php 
             }
             $run->close();
-            include('./home/phantrang.php');
+            
         }
             ?>
 </div>
+<?php include('./home/phantrang.php'); ?>

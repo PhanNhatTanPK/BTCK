@@ -1,3 +1,11 @@
+<style>
+    .pagination
+    {
+        text-align: center;
+        margin-top: 520px;
+    }
+</style>
+
 <div class="pagination">
            <?php 
             // PHẦN HIỂN THỊ PHÂN TRANG

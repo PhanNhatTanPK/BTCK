@@ -12,6 +12,7 @@
         include("./config.php");
         include("./Header1.php");
         include("./homepage.php"); 
+        include("./footer.php")
     ?>
 </body>
 </html>
