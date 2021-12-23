@@ -37,7 +37,7 @@
             <a href="">Danh sách lớp </a>
         </li>
            <li>
-            <a href="http://localhost/plan.php">Kế hoạch </a>
+            <a href="">Kế hoạch </a>
             <ul class="subnav">
                 <li><a href="">Creat</a></li>
                 <li><a href="">Update</a></li>
