@@ -14,19 +14,19 @@
 <body>
     <div class="container">
         <div class="image">
-            <img src="pic/an.jpg" alt="">
+            <img src="Image/an.jpg" alt="">
         </div>
         <div class="image">
-            <img src="pic/hung.jpg" alt="">
+            <img src="Image/hung.jpg" alt="">
         </div>
         <div class="image">
             <img src="pic/tan.jpg" alt="">
         </div>
         <div class="image">
-            <img src="pic/an.jpg" alt="">
+            <img src="Image/an.jpg" alt="">
         </div>
         <div class="image">
-            <img src="pic/an.jpg" alt="">
+            <img src="Image/an.jpg" alt="">
         </div>
         <div class="button">
             <a onclick="nextimg(-1)" class="prev">&#10094;</a>
