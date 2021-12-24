@@ -10,7 +10,7 @@
 <body>
     <?php 
         include("./config.php");
-        include("./Header1.php");
+        include("./Header.php");
         include("./homepage.php"); 
         include("./footer.php")
     ?>
