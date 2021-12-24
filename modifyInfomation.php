@@ -61,9 +61,8 @@
                 }
         }
     ?>
-
-    <div class="modify">
-        <h1 style="text-align: center;">Thông tin cá nhân</h1>
+    <h1 style="text-align: center; margin-top: 900px;">Thông tin cá nhân</h1>
+    <div class="modify">       
         <form action="./modifyInfomation.php" method="post" enctype="multipart/form-data">
         <?php    
             if(count($errors) > 0){
@@ -93,7 +92,7 @@
                 <h4 class="pd10"><?php echo $row['fullName'];?></h4>
                 <p class="sub pd10">Lớp Kỹ thuật phần mềm-K42</p>  
                 <div class="">
-                    <label class ="modify-btn" for="upload"> <i class="fa fa-camera"></i> Đổi ảnh đại diện</label>
+                    <label class ="modify-btn" for="upload"> <i class="fa fa-camera" style="padding: 5px 0 5px 20px "></i> Đổi ảnh đại diện</label>
                     <input id="upload" type="file" name="image">                                                                                                             
                 </div>               
             </div>
