@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=devicqe-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Css/hdlogin.css">
+    <link rel="stylesheet" href="CSS/hdlogin.css">
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
@@ -33,14 +33,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">Danh sách lớp </a>
+                        <a href="./listStudents.php">Danh sách sinh viên </a>
                         <ul class="subnav">
                         </ul>
                     </li>
                     <li>
-                        <a href="">Kế hoạch </a>
+                        <a href="http://localhost/Header/plan.php">Kế hoạch </a>
                         <ul class="subnav">
-                        <li><a href="http://localhost/plan.php">Creat</a></li>
+                        <li><a href="">Creat</a></li>
                         <li><a href="">Update</a></li>
                         </ul>
                     </li>
@@ -59,8 +59,8 @@
                                 ?>
                             </a>
                             <ul class="subnav">
-                                <li><a href="http://localhost/login.php">THÔNG TIN CÁ NHÂN</a></li>
-                                <li><a href="http://localhost/logout.php">ĐĂNG XUẤT</a></li>
+                                <li><a href="./modifyInfomation.php">THÔNG TIN CÁ NHÂN</a></li>
+                                <li><a href="./logout.php">ĐĂNG XUẤT</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -71,9 +71,7 @@
         <!-- end nav -->
         <!-- begin : search button -->
     </div>
-    <?php
-    include('slide.php');
-    ?>
+   
       
  
 </body>
