@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=devicqe-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Css/header.css">
+    <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
 </head>
@@ -34,10 +34,10 @@
             </ul>
         </li>
            <li>
-            <a href="">Danh sách lớp </a>
+            <a href="./listStudents.php">Danh sách sinh viên </a>
         </li>
            <li>
-            <a href="">Kế hoạch </a>
+            <a href="http://localhost/Header/plan.php">Kế hoạch </a>
             <ul class="subnav">
                 <li><a href="">Creat</a></li>
                 <li><a href="">Update</a></li>
@@ -50,8 +50,8 @@
                 <a href=""><i class="ti-user"></i>TÀI KHOẢN
             </a>
                 <ul class="subnav">
-                    <li><a href="http://localhost/Login.php">Đăng nhập</a></li>
-                    <li><a href="http://localhost/SignUp.php">Đăng ký</a></li>
+                    <li><a href="./login.php">Đăng nhập</a></li>
+                    <li><a href="./signUp.php">Đăng ký</a></li>
          
                 </ul>
             </li>
