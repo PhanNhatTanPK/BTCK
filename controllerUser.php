@@ -50,7 +50,7 @@ if(isset($_POST['signup'])){
         $res = mysqli_query($conn, $check_user);
 
         if(mysqli_num_rows($res) > 0) {          
-            header('location: http://localhost/baitap/BTCK/index.php');               
+            header('location: ./slide.php');               
         }            
         else {
             $errors['username'] = "Tài khoản hoặc mật khẩu không dúng!";
