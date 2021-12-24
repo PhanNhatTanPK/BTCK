@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        include("./header.php");
+        include("./headerlogin.php");
     ?>
 
     <?php  
@@ -29,30 +29,14 @@
             $countryside = mysqli_real_escape_string($conn, $_POST['countryside']);
             $phone = mysqli_real_escape_string($conn, $_POST['phone']);
             $note = mysqli_real_escape_string($conn, $_POST['note']);
-            // $newpassword =  mysqli_real_escape_string($conn, $_POST['newPassword']);
-            // $fb = mysqli_real_escape_string($conn, $_POST['facebook']);
-            // $ins = mysqli_real_escape_string($conn, $_POST['instagram']);
-            // $tw = mysqli_real_escape_string($conn, $_POST['twitter']);
-            // $oldpassword = mysqli_real_escape_string($conn, $_POST['oldPassword']);
-            // $repassword = mysqli_real_escape_string($conn, $_POST['rePassword']);
             
-            // $check_user = "SELECT * FROM account WHERE id_SV = '$_SESSION[username]' AND userPass = '$oldpassword'";
-            // $res = mysqli_query($conn, $check_user);
-            
-            // if($oldpassword != "" && mysqli_num_rows($res) < 0) {
-            //     $errors['pass'] = "Mật khẩu bạn đã nhập không đúng";
-            // }
-            // elseif($repassword != $newpassword) {
-            //     $errors['password'] = "Mật khẩu nhập lại không đúng";
-            // }
-            // else {
                 $sql = "UPDATE account SET id_SV = '$username', fullName = '$fullname', sex = '$sex', email = '$email',
                             birthday = '$birthday', address = '$address' , countryside = '$countryside', 
                             phone = '$phone', note = '$note'
                             WHERE id_SV = $_SESSION[username]";
             
                 $query = mysqli_query($conn, $sql);
-            // }  
+             
 
             // Lưu ảnh đại diện
                 $maxSize = 1024000;
@@ -193,43 +177,7 @@
                         </div>
                 </div>
 
-                <!-- <div class="form-group">
-                    <div class="form-control">
-                        <h3 style="margin-bottom: 10px;">ĐỔI MẬT KHẨU</h3>
-                        <label>Mật khẩu cũ</label>
-                        <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="oldPassword" type="password">
-                        </div>
-
-                        <label>Mật khẩu mới</label>
-                        <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="newPassword" value="" type="password">
-                        </div>
-
-                        <label>Nhập lại mật khẩu</label>
-                        <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="rePassword" value="" type="password">
-                        </div>
-                    </div>
-
-                    <div class="form-control">
-                        <h3 style="margin-bottom: 10px;">MẠNG XÃ HỘI</h3>
-                        <label>Facebook</label>
-                        <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="facebook" value="" type="text">
-                        </div>
-
-                        <label>Instagram</label>
-                        <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="instagram" value="" type="text">
-                        </div>
-
-                        <label>Twitter</label>
-                        <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="twitter" value="" type="text">
-                        </div>
-                    </div>
-                </div> -->
+               
                 <div class="modify-submit">
                     <button class="modify-btn" type="submit" name="save">Lưu</button>
                 </div>               
