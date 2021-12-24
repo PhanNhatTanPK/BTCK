@@ -19,8 +19,9 @@
     border: #74b9ff 3px solid;
     border-radius: 100px;
 }
-.search_h_txt
+.search_h input[type=text]
 {
+    padding: 12px 40px;
     height: 44px;
     width: 630px;
     border: 0;
@@ -30,6 +31,7 @@
 }
 .search_h_btn
 {
+    color: #dfe6e9;
     position: absolute;
     height: 44px;
     width: 100px;
@@ -43,10 +45,10 @@
     <div class="pad10">
         <form class="search_h" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
 
-			<input class="search_h_txt" type="text" name="search" placeholder="          Search Info" 
+			<input class="search_h_txt" type="text" name="search" placeholder="Nhập tên của một ai đó..." 
                 value="<?php echo isset($_GET['search']) ? $_GET['search']:'' ;?>"/>
 
-            <input class="search_h_btn" type="submit" name="bt_search" value="    "/>
+            <input class="search_h_btn" type="submit" name="bt_search" value="Tìm kiếm"/>
         </form>
     </div>
 </div>
