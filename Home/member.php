@@ -3,30 +3,33 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Dosis", sans-serif;
-  background: #c5cae9;
-}
-
 .clear {
   clear: both;
 }
 
 /*** CARD STLES ***/
 .title
+{ 
+  font-size: 30px;
+}
+.bg
 {
+  font-family: "Dosis", sans-serif;
+  background: #c5cae9;
   text-align: center;
+  height: 600px
 }
 .cards-container {
+  
   width: 793px;
   max-width: 100%;
-  margin: 2rem auto;
-  text-align: center;
+  margin: 1rem auto;
+  
 }
 
 .card {
   float: left;
-  margin: 3rem;
+  margin: 1rem 3rem;
 }
 
 .card-one {
@@ -177,6 +180,7 @@ body {
 }
 
 </style>
+<div class="bg">
 <div class="title">
         <h4>Thành viên</h4>               
 </div>
@@ -270,3 +274,4 @@ body {
             ?>
 </div>
 <?php include('./home/phantrang.php'); ?>
+</div>
