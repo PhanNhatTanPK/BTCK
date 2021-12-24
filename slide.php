@@ -6,27 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=devicqe-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Css/slide.css">
+    <link rel="stylesheet" href="CSS/slide.css">
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 <body>
+<?php
+    include('./headerlogin.php');
+    ?>
     <div class="container">
         <div class="image">
-            <img src="Image/an.jpg" alt="">
+            <img src="Image/Genshin-Impact-Zhongli-Character-Build-Changes-1.5.jpg" alt="an">
         </div>
         <div class="image">
-            <img src="Image/hung.jpg" alt="">
+            <img src="Image/hung.jpg" alt="hung">
         </div>
         <div class="image">
-            <img src="pic/tan.jpg" alt="">
+            <img src="Image/tan.jpg" alt="tan">
         </div>
         <div class="image">
-            <img src="Image/an.jpg" alt="">
+            <img src="Image/minh.jpg" alt="minh">
         </div>
         <div class="image">
-            <img src="Image/an.jpg" alt="">
+            <img src="Image/nganlol.jpg" alt="ngan">
         </div>
         <div class="button">
             <a onclick="nextimg(-1)" class="prev">&#10094;</a>
@@ -40,6 +43,7 @@
             <span class="dot" onclick="currentSlide(5)"></span>
         </div>
     </div>
+    
     <script>
         var imageno = 1;
         displayimg(imageno);
