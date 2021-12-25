@@ -1,0 +1,353 @@
+CREATE DATABASE MyClass CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE MyClass;
+
+
+CREATE TABLE IF NOT EXISTS Account
+(
+    id_SV varchar(20) NOT null UNIQUE,
+    userPass varchar(50) NOT null,
+    fullName varchar(50),
+    birthday date,      /* YYYY-MM-DD*/
+    sex varchar(15),
+    countryside varchar(100),
+    address varchar(100),
+    phone varchar(15),
+    email varchar(50),
+    image varchar(100),
+    note varchar(1000),
+    code int,
+    
+    PRIMARY KEY(id_SV)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Plan
+(
+    id_plan int AUTO_INCREMENT,
+    title varchar(50),
+    time datetime,      /* YYYY-MM-DD HH:MM:SS*/
+    place varchar(100),
+    level int,      /*Cấp của hoạt động 1:Lớp, 2:Khoa(Hội SV Khoa, Đoàn Khoa,...), 3:Trường(Hội SV Trường, Đoàn Trường,...) */
+    note varchar(1000),
+    file varchar(100),
+    id_SV varchar(20) NOT null,
+    
+    PRIMARY KEY(id_plan),
+    CONSTRAINT FK_Plan_Acc FOREIGN KEY (id_SV) REFERENCES Account(id_SV)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Detailed_plan
+(
+    id_plan int NOT null,
+    id_SV varchar(20) NOT null,
+    position int,      /*Tư cách tham gia 1:Cổ vũ, 2:Tham gia, 3:Có giải, 4:BTC */
+    plus_point int,      /*Điểm này là điểm của mỗi hoạt động, còn Điểm để show ra form =  Plan(level) * Detailed_plan(position) * Detailed_plan(plus_point) */
+
+    PRIMARY KEY(id_plan,id_SV),
+    CONSTRAINT FK_Deta_Acc FOREIGN KEY (id_SV) REFERENCES Account(id_SV),
+    CONSTRAINT FK_Deta_Plan FOREIGN KEY (id_plan) REFERENCES Plan(id_plan)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Subject      /*Bảng này éo cần nhập cho sẵn dữ liệu đi :)))*/
+(
+    id_subject int AUTO_INCREMENT,
+    sub_name varchar(50),
+    no_credit int,
+
+    PRIMARY KEY(id_subject)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Score      /* Bảng này cô bắt import file excel vào database (import thành bảng ấy chứ không phải cái link như avt đâu) :> */
+(
+    id_subject int NOT null,
+    id_SV varchar(20) NOT null,
+    
+    point float,
+    
+    PRIMARY KEY(id_subject,id_SV),
+    CONSTRAINT FK_Score_Acc FOREIGN KEY (id_SV) REFERENCES Account(id_SV),
+    CONSTRAINT FK_Score_Sub FOREIGN KEY (id_subject) REFERENCES Subject(id_subject)
+) ENGINE = InnoDB;
+
+
+
+
+INSERT INTO account VALUES ('4251190002','123456789','Lê Thiên Minh Hùng','2001-01-01','Nam','Quảng Trị','Quy Nhơn','0945435917','gnuh301@gmail.com','','',null);
+INSERT INTO account VALUES ('4251190013','123456789','Phan Nhật Tân','2001-06-10','Nam','Gia Lai','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190006','123456789','Nguyễn Đỗ Thế An','2001-11-02','Nam','Bình Định','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190001','123456789','Vũ Hoàng Ngọc Minh','1996-08-18','Nam','Gia Lai','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190011','123456789','Lê Hồ Thu Ngân','2001-12-19','Nữ','Bình Định','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190012','123','Nguyễn Mạnh Hùng','2007-01-06','Nam','Hoàng Văn Thụ','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190010','123','Lê Hùng','2007-08-07','Nam','Tân Thịnh','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190009','123','Hoàng Quỳnh Hương','2007-10-05','Nữ','Thịnh Đán','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190008','123','Nguyễn Bảo Khánh','2007-06-21','Nam','Trưng Vương','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190007','123','Lê Huy Khánh','2007-01-03','Nam','Hoàng Văn Thụ','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190005','123','Vũ Nam Khánh','2007-08-15','Nam','Sơn Cẩm','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190004','123','Đỗ Ngọc Linh','2007-09-08','Nữ','Tích Lương','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190003','123','Nguyễn Khánh Linh','2007-05-25','Nữ','Đồng Quang','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190014','123','Nguyễn Trường An','2007-10-14','Nam','Phan Đình Phùng','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190015','123','Trịnh Đức Anh','2007-07-20','Nam','Trưng Vương','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190016','123','Hà Mai Anh','2007-07-02','Nữ','Quang Vinh','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190017','123','Hoàng Phương Anh','2007-02-22','Nữ','Tân Thịnh','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190018','123','Ngô Vân Anh','2007-07-15','Nữ','Hoàng Văn Thụ','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190019','123','Phạm Hồng Dương','2007-06-26','Nam','Phú Xá','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190020','123','Phạm Thị Ngọc Hà','2007-11-06','Nữ','Quyết Thắng','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190021','123','Trần Lê Ngọc Hà','2007-03-02','Nữ','Tích Lương','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190022','123','Đồng Thu Hiền','2007-03-28','Nữ','Phan Đình Phùng','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190023','123','Đinh Thị Thu Hiền','2007-05-08','Nữ','Trung Thành','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190024','123','Nguyễn Anh Hiếu','2007-04-23','Nam','Phú Xá','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190025','123','Nguyễn Minh Hiếu','2007-09-17','Nam','Đồng Quang','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190026','123','Phạm Phương Hoa','2007-06-26','Nữ','Phú Xá','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190027','123','Nguyễn Minh Hoàng','2007-12-20','Nam','Tân Thịnh','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190028','123','Hà Thiên Phát','2007-07-20','Nam','Ghềnh Ráng','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190029','123','Nguyễn Ngọc Hoàng Hà','2007-03-30','Nam','Tân Thịnh','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190030','123','Công tằng tôn Nữ Lyna Bạch Ngọc','2007-05-03','Nữ','Huế','Quy Nhơn','','','','',null);
+
+
+
+
+INSERT INTO Plan VALUES (null,'Chào mừng ngày nhà giáo việt nam','2021-11-20 07:00:00','Hội trường B',1,'Mặc áo khoa','','4251190002');
+INSERT INTO Plan VALUES (null,'Leo núi','2021-11-26 05:00:00','Vũng Chua',0,'Đem theo nước','','4251190013');
+INSERT INTO Plan VALUES (null,'Thủ lĩnh Sinh viên','2021-12-15 08:00:00','Sân sau thư viện',2,'Đeo huy hiệu đoàn hoặc hội','','4251190011');
+INSERT INTO Plan VALUES (null,'Chào mừng ngày thành lập QĐND VN','2021-12-22 19:00:00','Hội trường A',1,'Áo khoa','','4251190002');
+INSERT INTO Plan VALUES (null,'Xuân yêu thương','2021-12-29 07:00:00','Tập trung cổng trường',1,'Áo khoa','','4251190002');
+
+
+
+INSERT INTO Detailed_plan VALUES (1,'4251190002',2,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190013',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190002',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190001',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190013',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190011',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190006',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190002',4,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190011',3,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190013',3,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190001',4,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190014',2,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190016',1,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190017',2,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190019',1,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190020',2,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190022',1,null);
+INSERT INTO Detailed_plan VALUES (1,'4251190023',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190026',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190027',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190030',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190004',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190005',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190008',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190009',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190010',3,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190012',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190016',1,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190017',2,null);
+INSERT INTO Detailed_plan VALUES (2,'4251190020',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190021',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190024',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190025',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190026',3,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190028',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190029',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190030',3,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190003',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190004',3,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190006',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190007',2,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190010',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190014',1,null);
+INSERT INTO Detailed_plan VALUES (3,'4251190015',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190016',3,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190017',4,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190018',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190019',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190022',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190023',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190026',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190027',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190030',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190001',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190002',3,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190004',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190005',2,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190006',3,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190008',1,null);
+INSERT INTO Detailed_plan VALUES (4,'4251190009',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190011',4,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190012',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190013',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190016',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190017',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190020',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190021',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190024',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190025',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190028',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190029',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190001',4,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190002',1,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190003',2,null);
+INSERT INTO Detailed_plan VALUES (5,'4251190005',4,null);
+
+
+INSERT INTO Subject VALUES (null,'Giải tích',1);
+INSERT INTO Subject VALUES (null,'Lập trình cơ bản',3);
+INSERT INTO Subject VALUES (null,'Đại số tuyến tính',2);
+INSERT INTO Subject VALUES (null,'Lập trình web',3);
+INSERT INTO Subject VALUES (null,'Hệ QTCSDL',2);
+
+
+INSERT INTO Score VALUES (1,'4251190001',7.60);
+INSERT INTO Score VALUES (1,'4251190002',6.85);
+INSERT INTO Score VALUES (1,'4251190003',9.82);
+INSERT INTO Score VALUES (1,'4251190004',8.65);
+INSERT INTO Score VALUES (1,'4251190005',7.05);
+INSERT INTO Score VALUES (1,'4251190006',4.55);
+INSERT INTO Score VALUES (1,'4251190007',4.02);
+INSERT INTO Score VALUES (1,'4251190008',8.79);
+INSERT INTO Score VALUES (1,'4251190009',6.92);
+INSERT INTO Score VALUES (1,'4251190010',5.31);
+INSERT INTO Score VALUES (1,'4251190011',8.66);
+INSERT INTO Score VALUES (1,'4251190012',9.10);
+INSERT INTO Score VALUES (1,'4251190013',6.05);
+INSERT INTO Score VALUES (1,'4251190014',4.48);
+INSERT INTO Score VALUES (1,'4251190015',7.57);
+INSERT INTO Score VALUES (1,'4251190016',7.88);
+INSERT INTO Score VALUES (1,'4251190017',5.30);
+INSERT INTO Score VALUES (1,'4251190018',7.23);
+INSERT INTO Score VALUES (1,'4251190019',8.36);
+INSERT INTO Score VALUES (1,'4251190020',4.22);
+INSERT INTO Score VALUES (1,'4251190021',6.80);
+INSERT INTO Score VALUES (1,'4251190022',6.14);
+INSERT INTO Score VALUES (1,'4251190023',8.88);
+INSERT INTO Score VALUES (1,'4251190024',5.02);
+INSERT INTO Score VALUES (1,'4251190025',7.01);
+INSERT INTO Score VALUES (1,'4251190026',6.33);
+INSERT INTO Score VALUES (1,'4251190027',7.53);
+INSERT INTO Score VALUES (1,'4251190028',4.76);
+INSERT INTO Score VALUES (1,'4251190029',7.89);
+INSERT INTO Score VALUES (1,'4251190030',6.27);
+INSERT INTO Score VALUES (2,'4251190001',5.32);
+INSERT INTO Score VALUES (2,'4251190002',7.69);
+INSERT INTO Score VALUES (2,'4251190003',5.74);
+INSERT INTO Score VALUES (2,'4251190004',8.18);
+INSERT INTO Score VALUES (2,'4251190005',7.85);
+INSERT INTO Score VALUES (2,'4251190006',6.35);
+INSERT INTO Score VALUES (2,'4251190007',8.52);
+INSERT INTO Score VALUES (2,'4251190008',5.40);
+INSERT INTO Score VALUES (2,'4251190009',5.65);
+INSERT INTO Score VALUES (2,'4251190010',9.22);
+INSERT INTO Score VALUES (2,'4251190011',8.50);
+INSERT INTO Score VALUES (2,'4251190012',6.36);
+INSERT INTO Score VALUES (2,'4251190013',6.54);
+INSERT INTO Score VALUES (2,'4251190014',6.09);
+INSERT INTO Score VALUES (2,'4251190015',8.72);
+INSERT INTO Score VALUES (2,'4251190016',9.84);
+INSERT INTO Score VALUES (2,'4251190017',7.95);
+INSERT INTO Score VALUES (2,'4251190018',6.66);
+INSERT INTO Score VALUES (2,'4251190019',8.63);
+INSERT INTO Score VALUES (2,'4251190020',5.54);
+INSERT INTO Score VALUES (2,'4251190021',5.80);
+INSERT INTO Score VALUES (2,'4251190022',7.21);
+INSERT INTO Score VALUES (2,'4251190023',6.39);
+INSERT INTO Score VALUES (2,'4251190024',6.77);
+INSERT INTO Score VALUES (2,'4251190025',6.61);
+INSERT INTO Score VALUES (2,'4251190026',4.48);
+INSERT INTO Score VALUES (2,'4251190027',4.59);
+INSERT INTO Score VALUES (2,'4251190028',4.28);
+INSERT INTO Score VALUES (2,'4251190029',5.99);
+INSERT INTO Score VALUES (2,'4251190030',7.98);
+INSERT INTO Score VALUES (3,'4251190001',5.38);
+INSERT INTO Score VALUES (3,'4251190002',4.22);
+INSERT INTO Score VALUES (3,'4251190003',9.90);
+INSERT INTO Score VALUES (3,'4251190004',4.59);
+INSERT INTO Score VALUES (3,'4251190005',6.39);
+INSERT INTO Score VALUES (3,'4251190006',4.08);
+INSERT INTO Score VALUES (3,'4251190007',4.11);
+INSERT INTO Score VALUES (3,'4251190008',9.80);
+INSERT INTO Score VALUES (3,'4251190009',6.79);
+INSERT INTO Score VALUES (3,'4251190010',5.06);
+INSERT INTO Score VALUES (3,'4251190011',5.26);
+INSERT INTO Score VALUES (3,'4251190012',8.75);
+INSERT INTO Score VALUES (3,'4251190013',6.49);
+INSERT INTO Score VALUES (3,'4251190014',7.10);
+INSERT INTO Score VALUES (3,'4251190015',5.70);
+INSERT INTO Score VALUES (3,'4251190016',5.13);
+INSERT INTO Score VALUES (3,'4251190017',7.98);
+INSERT INTO Score VALUES (3,'4251190018',7.56);
+INSERT INTO Score VALUES (3,'4251190019',5.14);
+INSERT INTO Score VALUES (3,'4251190020',5.15);
+INSERT INTO Score VALUES (3,'4251190021',8.98);
+INSERT INTO Score VALUES (3,'4251190022',5.31);
+INSERT INTO Score VALUES (3,'4251190023',5.42);
+INSERT INTO Score VALUES (3,'4251190024',8.03);
+INSERT INTO Score VALUES (3,'4251190025',9.90);
+INSERT INTO Score VALUES (3,'4251190026',8.97);
+INSERT INTO Score VALUES (3,'4251190027',8.19);
+INSERT INTO Score VALUES (3,'4251190028',8.91);
+INSERT INTO Score VALUES (3,'4251190029',7.49);
+INSERT INTO Score VALUES (3,'4251190030',7.57);
+INSERT INTO Score VALUES (4,'4251190001',7.10);
+INSERT INTO Score VALUES (4,'4251190002',6.98);
+INSERT INTO Score VALUES (4,'4251190003',9.75);
+INSERT INTO Score VALUES (4,'4251190004',9.44);
+INSERT INTO Score VALUES (4,'4251190005',8.34);
+INSERT INTO Score VALUES (4,'4251190006',6.15);
+INSERT INTO Score VALUES (4,'4251190007',7.09);
+INSERT INTO Score VALUES (4,'4251190008',9.71);
+INSERT INTO Score VALUES (4,'4251190009',5.77);
+INSERT INTO Score VALUES (4,'4251190010',9.58);
+INSERT INTO Score VALUES (4,'4251190011',8.52);
+INSERT INTO Score VALUES (4,'4251190012',7.21);
+INSERT INTO Score VALUES (4,'4251190013',7.61);
+INSERT INTO Score VALUES (4,'4251190014',6.49);
+INSERT INTO Score VALUES (4,'4251190015',8.22);
+INSERT INTO Score VALUES (4,'4251190016',9.41);
+INSERT INTO Score VALUES (4,'4251190017',6.89);
+INSERT INTO Score VALUES (4,'4251190018',7.05);
+INSERT INTO Score VALUES (4,'4251190019',8.65);
+INSERT INTO Score VALUES (4,'4251190020',5.19);
+INSERT INTO Score VALUES (4,'4251190021',9.94);
+INSERT INTO Score VALUES (4,'4251190022',7.34);
+INSERT INTO Score VALUES (4,'4251190023',9.82);
+INSERT INTO Score VALUES (4,'4251190024',7.61);
+INSERT INTO Score VALUES (4,'4251190025',8.10);
+INSERT INTO Score VALUES (4,'4251190026',5.92);
+INSERT INTO Score VALUES (4,'4251190027',4.76);
+INSERT INTO Score VALUES (4,'4251190028',7.17);
+INSERT INTO Score VALUES (4,'4251190029',4.83);
+INSERT INTO Score VALUES (4,'4251190030',9.47);
+INSERT INTO Score VALUES (5,'4251190001',4.71);
+INSERT INTO Score VALUES (5,'4251190002',5.91);
+INSERT INTO Score VALUES (5,'4251190003',7.56);
+INSERT INTO Score VALUES (5,'4251190004',8.53);
+INSERT INTO Score VALUES (5,'4251190005',6.21);
+INSERT INTO Score VALUES (5,'4251190006',6.03);
+INSERT INTO Score VALUES (5,'4251190007',9.50);
+INSERT INTO Score VALUES (5,'4251190008',5.08);
+INSERT INTO Score VALUES (5,'4251190009',6.49);
+INSERT INTO Score VALUES (5,'4251190010',5.96);
+INSERT INTO Score VALUES (5,'4251190011',4.70);
+INSERT INTO Score VALUES (5,'4251190012',7.20);
+INSERT INTO Score VALUES (5,'4251190013',6.55);
+INSERT INTO Score VALUES (5,'4251190014',8.52);
+INSERT INTO Score VALUES (5,'4251190015',8.48);
+INSERT INTO Score VALUES (5,'4251190016',7.43);
+INSERT INTO Score VALUES (5,'4251190017',9.40);
+INSERT INTO Score VALUES (5,'4251190018',9.09);
+INSERT INTO Score VALUES (5,'4251190019',9.86);
+INSERT INTO Score VALUES (5,'4251190020',7.29);
+INSERT INTO Score VALUES (5,'4251190021',5.39);
+INSERT INTO Score VALUES (5,'4251190022',8.43);
+INSERT INTO Score VALUES (5,'4251190023',9.31);
+INSERT INTO Score VALUES (5,'4251190024',6.79);
+INSERT INTO Score VALUES (5,'4251190025',7.14);
+INSERT INTO Score VALUES (5,'4251190026',8.55);
+INSERT INTO Score VALUES (5,'4251190027',8.29);
+INSERT INTO Score VALUES (5,'4251190028',5.17);
+INSERT INTO Score VALUES (5,'4251190029',5.47);
+INSERT INTO Score VALUES (5,'4251190030',9.24);
