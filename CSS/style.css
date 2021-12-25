@@ -163,26 +163,29 @@ form {
     transition: all 0.2s ease;
 }
 
-.list table {
+ .tb {
     width: 100%;
     border-collapse: collapse;
     background-color: #f4f4fb;
+    
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 
-.list table th {
+ .tb th {
     background-color: #dddde7;
 }
 
-.list table th,
-.list table td {
+.tb th,
+ .tb td {
     padding: 0.8rem 0.2rem;
     text-align: center;
     min-width: 80px;
     font-size: 14px;
 }
 
-.list table tr:hover {
+ .tb tr:hover {
     background-color: #797474;
     border-bottom: 2px solid #2d2d2d;
     color: #fff;
@@ -323,6 +326,13 @@ input[type="file"] {
     position: relative;
     float: right;
 }
+
+.point {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 /* End modifyInfomation */
 
 /* Begin footer */

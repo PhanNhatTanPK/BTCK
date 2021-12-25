@@ -176,7 +176,193 @@
                             <textarea class="input-text" name="note" cols="10" rows="5"></textarea>
                         </div>
                 </div>
+                
+                <div class="form-group">
+                    <div class="form-control">
+                        <label>Điểm học phần</label>
+                        <table class="tb" style="
+                            max-width: 380px;
+                            display: block;
+                            margin: 8px 0 24px;
+                            ">
+                            <tr>
+                                <th>Học phần</th>
+                                <?php
+                                    $a = 0;                                  
+                                    $sql_point = "SELECT sub_name FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                                    $point = mysqli_query($conn,$sql_point);
 
+                                    while($row = mysqli_fetch_array($point)) {
+                                        if($a == 1) {
+                                             echo "</th>";
+                                             
+                                            $a = 0;
+                                        }    
+                                ?>
+
+                                <th><?php echo $row['sub_name'];?>
+
+                                <?php   
+                                   $a++;
+                                   }                                  
+                               ?>   
+                            </tr>
+                            
+                            <tr>
+                                <td><?php echo "Điểm" ?> </td>
+                                <?php
+                                 $j = 0;
+                                 $sql_point1 = "SELECT point FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                                 $point1 = mysqli_query($conn,$sql_point1);
+
+                                while($row = mysqli_fetch_array($point1)) {
+                                        if($j == 1) {
+                                             echo "</td>";
+                                            $j = 0;;
+                                        }
+                                ?>
+                                    
+                                <td><?php echo $row['point']?>
+                                   
+                                <?php 
+                                    $j++;  
+                                    }
+                                ?>               
+                        </table>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Các hoạt động tham gia</label>
+                        <table class="tb" style="
+                            max-width: 380px;
+                            display:block;
+                            margin: 8px 0 24px;
+                            ">
+                            <tr>
+                                <th>Tên hoạt động</th>
+                                <?php
+                                    $a = 0;                                  
+                                    $sql_plan = "SELECT * FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                                    $plan = mysqli_query($conn,$sql_plan);
+
+                                    while($row = mysqli_fetch_array($plan)) {
+                                        if($a == 1) {
+                                             echo "</th>";
+                                             
+                                            $a = 0;
+                                        }    
+                                ?>
+
+                                <th><?php echo $row['title'];?>
+
+                                <?php   
+                                   $a++;
+                                   }                                  
+                               ?>   
+                            </tr>
+                            
+                            <tr>
+                                <td><?php echo "Vị trí tham gia hoạt động" ?> </td>
+                                <?php
+                                 $j = 0;
+                                 $sql_plan1 = "SELECT position FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                                 $plan1 = mysqli_query($conn,$sql_plan1);
+
+                                while($row = mysqli_fetch_array($plan1)) {
+                                        if($j == 1) {
+                                             echo "</td>";
+                                            $j = 0;;
+                                        }
+                                ?>
+                                    
+                                <td>
+                                    <?php 
+                                        if($row['position'] == 1) {
+                                            echo "Cổ vũ";
+                                        }  
+                                        elseif($row['position'] == 2) {
+                                            echo "Tham gia";
+                                        }
+                                        elseif($row['position'] == 3) {
+                                            echo "Có giải";
+                                        }
+                                        elseif($row['position'] == 4) {
+                                            echo "Ban tổ chức";
+                                        }
+                                    ?>
+                                   
+                                <?php 
+                                    $j++;  
+                                    }
+                                ?>  
+                            </tr>
+                            
+                            <tr>
+                                <td><?php echo "Điểm cộng" ?> </td>
+                                <?php
+                                 $j = 0;
+                                 $sql_plan2 = "SELECT plus_point FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                                 $plan2 = mysqli_query($conn,$sql_plan2);
+
+                                while($row = mysqli_fetch_array($plan2)) {
+                                        if($j == 1) {
+                                             echo "</td>";
+                                            $j = 0;;
+                                        }
+                                ?>
+                                    
+                                <td>
+                                    <?php 
+                                        echo $row['plus_point']
+                                    ?>
+                                   
+                                <?php 
+                                    $j++;  
+                                    }
+                                ?>  
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <?php 
+                        // Tính điểm tổng kết
+                        $sum1 = 0;
+                        $no_credit = 0;
+                        $sql_point = "SELECT * FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                        $point = mysqli_query($conn,$sql_point);
+                         
+                        while($row = mysqli_fetch_array($point)) {
+                             $sum1 += $row['point'] * $row['no_credit'];
+                             $no_credit += $row['no_credit'];
+                        }
+
+                        // Tính điểm rèn luyện
+                        $sum2 = 0;
+                        $sql_plan2 = "SELECT * FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                        $plan2 = mysqli_query($conn,$sql_plan2);
+
+                        while($row = mysqli_fetch_array($plan2)) {
+                            $sum2 += $row['level'] * $row['position'] * $row['plus_point'];
+                        }
+                         
+                    ?>
+                    <div class="form-control">
+                        <label>Điểm tổng kết</label>
+                        <div class="input-group pdt8-pdb24"> 
+                            <input class="input-text mw" name="countryside" value="<?php echo $sum1/$no_credit;?>" type="number" disabled>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-control">
+                        <label>Điểm rèn luyện</label>
+                        <div class="input-group pdt8-pdb24">
+                            <input class="input-text mw" name="phone" value="<?php if($sum2 > 100) { echo "100";} else { echo $sum2;};?>" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
                
                 <div class="modify-submit">
                     <button class="modify-btn" type="submit" name="save">Lưu</button>
@@ -184,7 +370,7 @@
             </form>
         </div>
         <?php 
-            }
+             }
         ?>
     </div>
     <?php 

@@ -41,7 +41,7 @@
                 <button type="submit" name="search-btn" >Tìm kiếm</button>              
             </div>
 
-            <table>
+            <table class="tb">
                 <tr>
                     <th>STT</th>
                     <th>Tên hoạt động</th>
