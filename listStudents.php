@@ -12,7 +12,7 @@
 ?>
 
 <body>
-    <?php include("./header.php") ?>
+    <?php include("./headerlogin.php") ?>
 
     <?php              
         $n = 1;
@@ -30,12 +30,12 @@
             $query = mysqli_query($conn, $sql1);          
         }
     ?>
-
+    <div class="list-header">
+            <h1>DANH SÁCH SINH VIÊN</h1>
+            <h3>Lớp kỹ thuật phầm mềm K42</h3>
+    </div>
     <div class="list detail">
-        <div class="list-header">
-            <h2>DANH SÁCH SINH VIÊN</h2>
-            <h4>Lớp kỹ thuật phầm mềm K42</h4>
-        </div>
+        
         <form action="./listStudents.php" method="post">
             <div class="list-btn">
                 <input type="text" placeholder="Nhập thông tin cần tìm kiếm" name="info">
