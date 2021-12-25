@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-           session_start();
+          
            include('config.php');
     ?>
     <div id="main">
@@ -47,7 +47,7 @@
             <div class="login">
             <ul class="nav">
             <li>
-                <a href=""><i class="ti-user"></i>TÀI KHOẢN
+                <a href=""><i class="fa fa-user-circle" style="margin-right: 10px;"></i>TÀI KHOẢN
             </a>
                 <ul class="subnav">
                     <li><a href="./login.php">Đăng nhập</a></li>

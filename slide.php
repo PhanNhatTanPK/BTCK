@@ -13,6 +13,7 @@
 
 <body>
 <?php
+    session_start();
     include('./headerlogin.php');
     ?>
     <div class="container">

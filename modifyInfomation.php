@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php
+        session_start();
         include("./headerlogin.php");
     ?>
 
@@ -61,7 +62,7 @@
                 }
         }
     ?>
-    <h1 style="text-align: center; margin-top: 900px;">Thông tin cá nhân</h1>
+    <h1 style="text-align: center; margin-top:100px">Thông tin cá nhân</h1>
     <div class="modify">       
         <form action="./modifyInfomation.php" method="post" enctype="multipart/form-data">
         <?php    

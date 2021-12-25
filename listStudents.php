@@ -12,8 +12,17 @@
 ?>
 
 <body>
-    <?php include("./headerlogin.php") ?>
-
+    <?php 
+        session_start();
+        if(isset($_SESSION['username'])) {
+            include("./headerlogin.php");
+        }
+        else {
+            include("./Header.php");
+        }
+        
+      
+    ?>
     <?php              
         $n = 1;
         $sql = "SELECT id_SV, fullName, birthday, sex, countryside, phone FROM account ORDER BY id_SV asc";

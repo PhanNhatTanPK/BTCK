@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php 
+    session_start();
         include("./config.php");
         include("./Header.php");
         include("./homepage.php"); 
