@@ -92,10 +92,7 @@
              <div class="modify-text">
                 <h4 class="pd10"><?php echo $row['fullName'];?></h4>
                 <p class="sub pd10">Lớp Kỹ thuật phần mềm-K42</p>  
-                <div class="">
-                    <label class ="modify-btn" for="upload"> <i class="fa fa-camera" style="padding: 5px 0 5px 20px "></i> Đổi ảnh đại diện</label>
-                    <input id="upload" type="file" name="image">                                                                                                             
-                </div>               
+                               
             </div>
         </div>
 
@@ -110,14 +107,14 @@
                     <div class="form-control">
                         <label>Họ và tên</label>
                         <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="fullName" value="<?php echo $row['fullName']?>" type="text">
+                            <input class="input-text mw" name="fullName" value="<?php echo $row['fullName']?>" type="text" disabled>
                         </div>
                     </div>
 
                     <div class="form-control">
                         <label>Mã sinh viên</label>
                         <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="id_SV" value="<?php echo $row['id_SV']?>" type="text">
+                            <input class="input-text mw" name="id_SV" value="<?php echo $row['id_SV']?>" type="text" disabled>
                         </div>
                     </div>
                 </div>
@@ -126,14 +123,14 @@
                     <div class="form-control">
                         <label>Email</label>
                         <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="email" value="<?php echo $row['email']?>" type="email">
+                            <input class="input-text mw" name="email" value="<?php echo $row['email']?>" type="email" disabled>
                         </div>
                     </div>
 
                     <div class="form-control">
                         <label>Ngày sinh</label>
                         <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="birthday" value="<?php echo $row['birthday']?>" type="text">
+                            <input class="input-text mw" name="birthday" value="<?php echo $row['birthday']?>" type="text" disabled>
                         </div>
                     </div>
                 </div>
@@ -142,14 +139,14 @@
                     <div class="form-control">
                         <label>Giới tính</label>
                         <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="sex" value="<?php echo $row['sex']?>" type="text">
+                            <input class="input-text mw" name="sex" value="<?php echo $row['sex']?>" type="text" disabled>
                         </div>
                     </div>
 
                     <div class="form-control">
                         <label>Địa chỉ</label>
                         <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="address" value="<?php echo $row['address']?>" type="text">
+                            <input class="input-text mw" name="address" value="<?php echo $row['address']?>" type="text" disabled>
                         </div>
                     </div>
                 </div>
@@ -158,30 +155,18 @@
                     <div class="form-control">
                         <label>Quê quán</label>
                         <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="countryside" value="<?php echo $row['countryside']?>" type="text">
+                            <input class="input-text mw" name="countryside" value="<?php echo $row['countryside']?>" type="text" disabled>
                         </div>
                     </div>
 
                     <div class="form-control">
                         <label>Số điện thoại</label>
                         <div class="input-group pdt8-pdb24">
-                            <input class="input-text mw" name="phone" value="<?php echo $row['phone']?>" type="text">
+                            <input class="input-text mw" name="phone" value="<?php echo $row['phone']?>" type="text" disabled>
                         </div>
                     </div>
                 </div>
 
-                 <div class="form-control">
-                        <label>Ghi chú</label>
-                        <div class="input-group pdt8-pdb24">
-                            <textarea class="input-text" name="note" cols="10" rows="5"></textarea>
-                        </div>
-                </div>
-
-                <div class="nav-tab">
-                    <h3>Bảng điểm</h3>                                
-                </div>
-                <hr>
-                
                 <div class="form-group">
                     <div class="form-control">
                         <label>Điểm học phần</label>
@@ -370,7 +355,7 @@
                 </div>
                
                 <div class="modify-submit">
-                    <button class="modify-btn" type="submit" name="save">Lưu</button>
+                    <button class="modify-btn" type="submit" name="save">Chỉnh sửa</button>
                 </div>               
             </form>
         </div>

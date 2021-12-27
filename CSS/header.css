@@ -68,10 +68,12 @@ html{
 
 position: relative;
 }
-.nav >li> a{
+.nav >li> a,
+.nav >li> button{
     color: white;
 }
-.nav li a {
+.nav li a,
+.nav li button {
     text-decoration: none;
     line-height: 80px;
     padding: 0 24px;

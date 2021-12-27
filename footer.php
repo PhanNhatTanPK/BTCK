@@ -17,7 +17,7 @@
     <div class="footer">
         <div class="grid-row1">
             <div class="grid-column">
-                <img src="https://i.pinimg.com/originals/a7/87/19/a787199285eb0b403d7609832561f580.gif" alt="" class="footer-logo">
+                <img src="./Image/logovuong.PNG" alt="" class="footer-logo">
             </div>
             <div class="grid-column1">
                 <h3 class="footer-heading">THÔNG TIN LIÊN HỆ</h3>
@@ -68,7 +68,7 @@
             </div>
             <div class="grid-column-a">
                 Designed & Developed by
-                <div class="grid-column-a1"><img class="footer-img" src="it1.png" alt=""></div>
+                <div class="grid-column-a1"><img class="footer-img" src="./Image/logongang.PNG" alt=""></div>
             </div>
         </div>
     </div>
