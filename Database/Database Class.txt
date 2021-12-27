@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS Score      /* Bảng này cô bắt import file excel
 
 
 INSERT INTO account VALUES ('4251190002','123456789','Lê Thiên Minh Hùng','2001-01-01','Nam','Quảng Trị','Quy Nhơn','0945435917','gnuh301@gmail.com','./Image/Hung_avt.jpg','',null);
-INSERT INTO account VALUES ('4251190013','123456789','Phan Nhật Tân','2001-06-10','Nam','Gia Lai','Quy Nhơn','','','','',null);
-INSERT INTO account VALUES ('4251190006','123456789','Nguyễn Đỗ Thế An','2001-11-02','Nam','Bình Định','Quy Nhơn','','','','',null);
-INSERT INTO account VALUES ('4251190001','123456789','Vũ Hoàng Ngọc Minh','1996-08-18','Nam','Gia Lai','Quy Nhơn','','','','',null);
+INSERT INTO account VALUES ('4251190013','123456789','Phan Nhật Tân','2001-06-10','Nam','Gia Lai','Quy Nhơn','','','./Image/tan.jpg','',null);
+INSERT INTO account VALUES ('4251190006','123456789','Nguyễn Đỗ Thế An','2001-11-02','Nam','Bình Định','Quy Nhơn','','','./Image/An_avt.jpg','',null);
+INSERT INTO account VALUES ('4251190001','123456789','Vũ Hoàng Ngọc Minh','1996-08-18','Nam','Gia Lai','Quy Nhơn','','','./Image/Minh_avt.jpg','',null);
 INSERT INTO account VALUES ('4251190011','123456789','Lê Hồ Thu Ngân','2001-12-19','Nữ','Bình Định','Quy Nhơn','','','','',null);
 INSERT INTO account VALUES ('4251190012','123','Nguyễn Mạnh Hùng','2007-01-06','Nam','Hoàng Văn Thụ','Quy Nhơn','','','','',null);
 INSERT INTO account VALUES ('4251190010','123','Lê Hùng','2007-08-07','Nam','Tân Thịnh','Quy Nhơn','','','','',null);
