@@ -15,7 +15,7 @@
 </head>
 
 <?php 
-     include('conect.php');
+     include('config.php');
     if(isset($_POST['insert'])) { 
         $title = $_POST['Title'];
         $time = $_POST['Time'];
@@ -25,7 +25,7 @@
         $file = $_POST['File'];
         $userName= $_POST['Username'];
         $sql = "INSERT INTO Plan  VALUES (null,'$title','$time','$place',$level,'$note','$file','$userName')";
-        $query =  mysqli_query($link,$sql);
+        $query =  mysqli_query($conn,$sql);
         if( $query ){
             echo "<script type='text/javascript'> alert('Tạo kế hoạch thành công')</script>";
         }
@@ -35,17 +35,6 @@
 
         }
     }  
-     //   xóa bằng cách nhập tên kế hoạch trên title r nhấn nút xóa nha ,
-    //   3 kế hoạch đầu của hùng do nó tạo cùng với database nên không xóa được
-    if(isset($_POST['delete'])){
-        mysqli_query($link, "delete from plan where title ='$_POST[Title]'") or die (mysqli_error ($link));
-        // dòng này để nó tự load ra không cần load lại web để nhìn thấy kết quả
-        ?> 
-        <script type="text/javascript">
-        window.location.href=window.location.href;
-        </script>
-        <?php
-    }
     
 ?>  
 <body>
@@ -65,7 +54,6 @@
 <option value="2">2</option>
 </select></label>
 <button class="btn" id="bt1" type="submit" name="insert" class="btn btn-default">Insert</button>
-<button class="btn"type="submit" name="delete" class="btn btn-default"> Delete</button>
 </form>
 </div>
 <div class="col-lg-12">
@@ -88,7 +76,7 @@
     <tbody>
     <?php
     // phần này là phần show data của plan
-      $res=mysqli_query ($link, "select * from plan");
+      $res=mysqli_query ($conn, "select * from plan");
       while ($row = mysqli_fetch_array ($res))
       {
       echo "<tr>";
