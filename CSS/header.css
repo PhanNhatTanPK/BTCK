@@ -38,9 +38,6 @@ html{
 
 /* class main */
 
-#main{
-  
-}
 #header{
     height: 80px;
     background-color:black;
@@ -133,15 +130,4 @@ padding: 0 12px
 }
 /* chuyen hinh */
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*disabled_link*/

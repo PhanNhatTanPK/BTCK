@@ -22,15 +22,7 @@
                 </div>
                 <ul class="nav">
                     <!-- beggin : nav -->
-                    <li class="tkb"><a href="">Thời Khóa biểu</a></li>
-                    <li>
-                        <a href="">Thành viên </a>
-                        <ul class="subnav">
-                        <li><a href="">An Nguyễn</a></li>
-                        <li><a href="">Tân Phan</a></li>
-                        <li><a href="">Hùng Lê</a></li>
-                        </ul>
-                    </li>
+                    <li class="tkb"><a href="./index.php">Trang chủ</a></li>
                     <li>
                         <a href="./listStudents.php">Danh sách sinh viên </a>
                         <ul class="subnav">
