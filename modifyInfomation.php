@@ -351,7 +351,7 @@
                     <div class="form-control">
                         <label>Điểm tổng kết</label>
                         <div class="input-group pdt8-pdb24"> 
-                            <input class="input-text mw" name="countryside" value="<?php echo $sum1/$no_credit;?>" type="number" disabled>
+                            <input class="input-text mw" name="countryside" value="<?php echo number_format ($sum1/$no_credit, 2);?>" type="number" disabled>
                         </div>
                     </div>
                     
