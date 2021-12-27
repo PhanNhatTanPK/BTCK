@@ -68,7 +68,7 @@
             </div>
             <div class="grid-column-a">
                 Designed & Developed by
-                <div class="grid-column-a1"><img class="footer-img" src="./Image/logongang.PNG" alt=""></div>
+                <div class="grid-column-a1"><img class="footer-img" src="./Image/logocave.PNG" alt=""></div>
             </div>
         </div>
     </div>
