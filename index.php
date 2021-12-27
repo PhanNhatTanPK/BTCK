@@ -7,11 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <title>Document</title>
 </head>
+<?php
+    include("./config.php");
+?>
 <body>
     <?php 
     session_start();
-        include("./config.php");
+    if(isset($_SESSION['username'])) 
+    {
+        include("./headerlogin.php");
+    }
+    else 
+    {
         include("./Header.php");
+    }
         include("./homepage.php"); 
         include("./footer.php")
     ?>

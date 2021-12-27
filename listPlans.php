@@ -12,8 +12,17 @@
 ?>
 
 <body>
-    <?php include("./header.php") ?>
-
+    <?php 
+        session_start();
+        if(isset($_SESSION['username'])) {
+            include("./headerlogin.php");
+        }
+        else {
+            include("./Header.php");
+        }
+        
+      
+    ?>
     <?php              
         $n = 1;
         $sql = "SELECT * FROM plan";
