@@ -48,7 +48,7 @@
 <option value="2">Khoa</option>
 <option value="3">Trường</option>
 </select></label>
-<label for="field2"><span>Thời gian<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="" /></label>
+<label for="field2"><span>Thời gian<span class="required">*</span></span><input type="text" class="input-field" name="Time" value="" placeholder="YYYY-MM-DD HH:MM:SS" /></label>
 <label for="field2"><span>Địa điểm<span class="required">*</span></span><input type="text" class="input-field" name="Place" value="" /></label>
 <label for="field2"><span>Ghi chú<span class="required">*</span></span><input type="text" class="input-field" name="Note" value="" /></label>
 <label for="field2"><span>File đính kèm<span class="required">*</span></span><input type="text" class="input-field" name="File" value="" /></label>
