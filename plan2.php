@@ -39,20 +39,23 @@
 ?>  
 <body>
 <div class="form-style-2">
-<div class="form-style-2-heading">PLANE KỸ THUẬT PHẦN MỀM K42</div>
+<div class="form-style-2-heading">Thêm một kế hoạch</div>
 <form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-<label for="field1"><span>Title<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="" /></label>
-<label for="field2"><span>Place<span class="required">*</span></span><input type="text" class="input-field" name="Place" value="" /></label>
-<label for="field2"><span>Note<span class="required">*</span></span><input type="text" class="input-field" name="Note" value="" /></label>
-<label for="field2"><span>File<span class="required">*</span></span><input type="text" class="input-field" name="File" value="" /></label>
-<label for="field2"><span>Username<span class="required">*</span></span><input type="text" class="input-field" name="Username"value=""/></label>
-<label for="field2"><span>Time<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="" /></label>
-
-<label for="field4"><span>Level</span><select name="Level" class="select-field">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
+<label for="field2"><span>Người tạo<span class="required">*</span></span><input type="text" class="input-field" name="Username"value="<?php session_start(); echo $_SESSION['username']?>"/></label>
+<label for="field1"><span>Tên hoạt động<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="" /></label>
+<label for="field4"><span>Cấp</span><select name="Level" class="select-field">
+<option value="1">Lớp</option>
+<option value="2">Khoa</option>
+<option value="3">Trường</option>
 </select></label>
+<label for="field2"><span>Thời gian<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="" /></label>
+<label for="field2"><span>Địa điểm<span class="required">*</span></span><input type="text" class="input-field" name="Place" value="" /></label>
+<label for="field2"><span>Ghi chú<span class="required">*</span></span><input type="text" class="input-field" name="Note" value="" /></label>
+<label for="field2"><span>File đính kèm<span class="required">*</span></span><input type="text" class="input-field" name="File" value="" /></label>
+
+
+
+
 <button class="btn" id="bt1" type="submit" name="insert" class="btn btn-default">Insert</button>
 </form>
 </div>
@@ -60,14 +63,14 @@
 <table class="table">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Time</th>
-        <th>Place</th>
-        <th>Level</th>
-        <th>Note</th>
-        <th>File</th>
-        <th>Username</th>
+        <th>STT</th>
+        <th>Tên hoạt động</th>
+        <th>Thời gian</th>
+        <th>Địa điểm</th>
+        <th>Cấp</th>
+        <th>Ghi chú</th>
+        <th>File đính kèm</th>
+        <th>Người tạo</th>
         <th>Edit</th>
         <th>Delete</th>
         <th></th>
@@ -84,7 +87,7 @@
       echo "<td>"; echo $row["title"]; echo "</td>";
       echo "<td>"; echo $row["time"]; echo "</td>";
       echo "<td>"; echo $row["place"]; echo "</td>";
-      echo "<td>"; echo $row["level"]; echo "</td>";
+      echo "<td>"; if ($row["level"] == 1) echo "Lớp"; else if ($row["level"] == 2) echo "Khoa"; else echo "Trường";  echo "</td>";
       echo "<td>"; echo $row["note"]; echo "</td>";
       echo "<td>"; echo $row["file"]; echo "</td>";
       echo "<td>"; echo $row["id_SV"]; echo "</td>";

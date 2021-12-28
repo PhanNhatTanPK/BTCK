@@ -47,9 +47,9 @@
 <label for="field2"><span>Time<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="<?php echo $time; ?>" /></label>
 
 <label for="field4"><span>Level</span><select name="Level" class="select-field" value="<?php echo   $level;  ?>">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
+<option value="1">Lớp</option>
+<option value="2">Khoa</option>
+<option value="3">Trường</option>
 </select></label>
 <button  class="btn"type="submit" name="update" class="btn btn-default">Update</button>
 </form>
