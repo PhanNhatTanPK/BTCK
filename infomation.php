@@ -197,9 +197,31 @@
                                    }                                  
                                ?>   
                             </tr>
+
+                            <tr>
+                                <td>Tín chỉ</td>
+                                <?php
+                                 $j = 0;
+                                 $sql_credit = "SELECT no_credit FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                                 $credit = mysqli_query($conn,$sql_credit);
+
+                                while($row = mysqli_fetch_array($credit)) {
+                                        if($j == 1) {
+                                             echo "</td>";
+                                            $j = 0;;
+                                        }
+                                ?>
+                                    
+                                <td><?php echo $row['no_credit']?>
+                                   
+                                <?php 
+                                    $j++;  
+                                    }
+                                ?>
+                            </tr>  
                             
                             <tr>
-                                <td><?php echo "Điểm" ?> </td>
+                                <td>Điểm</td>
                                 <?php
                                  $j = 0;
                                  $sql_point1 = "SELECT point FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
@@ -355,7 +377,7 @@
                 </div>
                
                 <div class="modify-submit">
-                    <button class="modify-btn" type="submit" name="save">Chỉnh sửa</button>
+                    <a class="modify-btn" href="./modifyInfomation.php" style="text-decoration: none;">Chỉnh sửa</a>
                 </div>               
             </form>
         </div>

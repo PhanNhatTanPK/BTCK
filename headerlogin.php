@@ -50,7 +50,7 @@
                                 ?>
                             </a>
                             <ul class="subnav">
-                                <li><a href="./modifyInfomation.php">THÔNG TIN CÁ NHÂN</a></li>
+                                <li><a href="./infomation.php">THÔNG TIN CÁ NHÂN</a></li>
                                 <li><a href="./logout.php">ĐĂNG XUẤT</a></li>
                             </ul>
                         </li>
