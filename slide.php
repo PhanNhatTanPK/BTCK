@@ -18,19 +18,19 @@
     ?>
     <div class="container">
         <div class="image">
-            <img src="Image/Genshin-Impact-Zhongli-Character-Build-Changes-1.5.jpg" alt="an">
+            <img src="./Image/slide1.jpg">
         </div>
         <div class="image">
-            <img src="Image/hung.jpg" alt="hung">
+            <img src="./Image/slide2.jpg" >
         </div>
         <div class="image">
-            <img src="Image/tan.jpg" alt="tan">
+            <img src="./Image/slide3.jpg">
         </div>
         <div class="image">
-            <img src="Image/minh.jpg" alt="minh">
+            <img src="./Image/slide4.jpg" >
         </div>
         <div class="image">
-            <img src="Image/nganlol.jpg" alt="ngan">
+            <img src="./Image/slide5.jpg" >
         </div>
         <div class="button">
             <a onclick="nextimg(-1)" class="prev">&#10094;</a>
