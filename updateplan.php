@@ -52,7 +52,7 @@
 <label for="field2"><span>File đính kèm<span class="required">*</span></span><input type="text" class="input-field" name="File" value="<?php echo $file;  ?>" /></label>
 
 
-<button  class="btn"type="submit" name="update" class="btn btn-default">Update</button>
+<button  class="btn"type="submit" name="update" class="btn btn-default">Cập nhật</button>
 </form>
 </div>
 </body>

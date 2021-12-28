@@ -56,7 +56,7 @@
 
 
 
-<button class="btn" id="bt1" type="submit" name="insert" class="btn btn-default">Insert</button>
+<button class="btn" id="bt1" type="submit" name="insert" class="btn btn-default">Thêm</button>
 </form>
 </div>
 <div class="col-lg-12">
@@ -71,8 +71,6 @@
         <th>Ghi chú</th>
         <th>File đính kèm</th>
         <th>Người tạo</th>
-        <th>Edit</th>
-        <th>Delete</th>
         <th></th>
       </tr>
     </thead>
@@ -91,8 +89,8 @@
       echo "<td>"; echo $row["note"]; echo "</td>";
       echo "<td>"; echo $row["file"]; echo "</td>";
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
-      echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-success">Edit</button></a> <?php echo "</td>";
-      echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-danger">Delete</button></a> <?php echo "</td>";
+      echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-success">Sửa</button></a> <?php echo "</td>";
+      echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-danger">Xóa</button></a> <?php echo "</td>";
       echo "</tr>";
       }
   ?>
