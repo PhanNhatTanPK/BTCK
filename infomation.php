@@ -64,7 +64,7 @@
     ?>
     <h1 style="text-align: center; margin-top:100px">Thông tin cá nhân</h1>
     <div class="modify">       
-        <form action="./modifyInfomation.php" method="post" enctype="multipart/form-data">
+        <form action="./infomation.php" method="post" enctype="multipart/form-data">
         <?php    
             if(count($errors) > 0){
         ?>
@@ -89,7 +89,7 @@
                 <img class="profile-pic" src="<?php echo $row['image']?>" />              
             </div>
             
-             <div class="modify-text">
+             <div class="modify-text" style ="margin-top: 30px">
                 <h4 class="pd10"><?php echo $row['fullName'];?></h4>
                 <p class="sub pd10">Lớp Kỹ thuật phần mềm-K42</p>  
                                
@@ -166,6 +166,11 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="nav-tab">
+                    <h3>Bảng điểm</h3>                                
+                </div>
+                <hr>
 
                 <div class="form-group">
                     <div class="form-control">
