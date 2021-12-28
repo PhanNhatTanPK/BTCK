@@ -37,20 +37,21 @@
 ?>
    <body>
 <div class="form-style-2">
-<div class="form-style-2-heading">PLANE KỸ THUẬT PHẦN MỀM K42</div>
+<div class="form-style-2-heading">Sửa kế hoạch</div>
 <form method="post">
-<label for="field1"><span>Title<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="<?php echo $title;  ?>" /></label>
-<label for="field2"><span>Place<span class="required">*</span></span><input type="text" class="input-field" name="Place" value="<?php echo  $place;  ?>" /></label>
-<label for="field2"><span>Note<span class="required">*</span></span><input type="text" class="input-field" name="Note" value="<?php echo  $note;  ?>" /></label>
-<label for="field2"><span>File<span class="required">*</span></span><input type="text" class="input-field" name="File" value="<?php echo $file;  ?>" /></label>
-<label for="field2"><span>Username<span class="required">*</span></span><input type="text" class="input-field" name="Username"value="<?php echo  $username;  ?>"/></label>
-<label for="field2"><span>Time<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="<?php echo $time; ?>" /></label>
-
-<label for="field4"><span>Level</span><select name="Level" class="select-field" value="<?php echo   $level;  ?>">
+<label for="field2"><span>Người tạo<span class="required">*</span></span><input type="text" class="input-field" name="Username"value="<?php echo  $username;  ?>"/></label>
+<label for="field1"><span>Tên hoạt động<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="<?php echo $title;  ?>" /></label>
+<label for="field4"><span>Cấp</span><select name="Level" class="select-field" value="<?php echo   $level;  ?>">
 <option value="1">Lớp</option>
 <option value="2">Khoa</option>
 <option value="3">Trường</option>
 </select></label>
+<label for="field2"><span>Thời gian<span class="required">*</span></span><input type="datetime-local" class="input-field" name="Time" value="<?php echo $time; ?>" /></label>
+<label for="field2"><span>Địa điểm<span class="required">*</span></span><input type="text" class="input-field" name="Place" value="<?php echo  $place;  ?>" /></label>
+<label for="field2"><span>Ghi chú<span class="required">*</span></span><input type="text" class="input-field" name="Note" value="<?php echo  $note;  ?>" /></label>
+<label for="field2"><span>File đính kèm<span class="required">*</span></span><input type="text" class="input-field" name="File" value="<?php echo $file;  ?>" /></label>
+
+
 <button  class="btn"type="submit" name="update" class="btn btn-default">Update</button>
 </form>
 </div>
