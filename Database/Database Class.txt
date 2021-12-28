@@ -109,11 +109,11 @@ INSERT INTO account VALUES ('4251190030','123','Công tằng tôn Nữ Lyna Bạ
 
 
 
-INSERT INTO Plan VALUES (null,'Chào mừng ngày nhà giáo việt nam','2021-11-20 07:00:00','Hội trường B',1,'Mặc áo khoa','','4251190002');
-INSERT INTO Plan VALUES (null,'Leo núi','2021-11-26 05:00:00','Vũng Chua',0,'Đem theo nước','','4251190013');
-INSERT INTO Plan VALUES (null,'Thủ lĩnh Sinh viên','2021-12-15 08:00:00','Sân sau thư viện',2,'Đeo huy hiệu đoàn hoặc hội','','4251190011');
-INSERT INTO Plan VALUES (null,'Chào mừng ngày thành lập QĐND VN','2021-12-22 19:00:00','Hội trường A',1,'Áo khoa','','4251190002');
-INSERT INTO Plan VALUES (null,'Xuân yêu thương','2021-12-29 07:00:00','Tập trung cổng trường',1,'Áo khoa','','4251190002');
+INSERT INTO Plan VALUES (null,'Chào mừng ngày nhà giáo việt nam','2021-11-20 07:00:00','Hội trường B',2,'Mặc áo khoa','','4251190002');
+INSERT INTO Plan VALUES (null,'Leo núi','2021-11-26 05:00:00','Vũng Chua',1,'Đem theo nước','','4251190013');
+INSERT INTO Plan VALUES (null,'Thủ lĩnh Sinh viên','2021-12-15 08:00:00','Sân sau thư viện',3,'Đeo huy hiệu đoàn hoặc hội','','4251190011');
+INSERT INTO Plan VALUES (null,'Chào mừng ngày thành lập QĐND VN','2021-12-22 19:00:00','Hội trường A',2,'Áo khoa','','4251190002');
+INSERT INTO Plan VALUES (null,'Xuân yêu thương','2021-12-29 07:00:00','Tập trung cổng trường',2,'Áo khoa','','4251190002');
 
 
 
