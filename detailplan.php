@@ -15,6 +15,16 @@
 </head>
 <?php
 include('config.php');
+session_start();
+      if ($_GET["idm"] != $_SESSION['username'])
+      {
+  ?>
+  <script type='text/javascript'> alert('Bạn không phải người quản lý kế hoạch này')</script>
+  <script type="text/javascript">
+  window.location=" plan2.php?id=<?php $_GET["id"];?>"
+  </script>
+  <?php
+      }
 include('headerlogin.php');
    $id = $_GET["id"];
 if(isset($_POST['insert'])) { 
@@ -24,11 +34,11 @@ if(isset($_POST['insert'])) {
     $sql = "INSERT INTO  detailed_plan VALUES ($id,'$idsv',$tucach,null)";
     $query =  mysqli_query($conn,$sql);
     if( $query ){
-        echo "<script type='text/javascript'> alert('Tạo kế hoạch thành công')</script>";
+        echo "<script type='text/javascript'> alert('Thêm người tham gia thành công')</script>";
     }
     else
     {
-        echo "<script type='text/javascript'> alert('Tạo kế hoạch không thành công')</script>";
+        echo "<script type='text/javascript'> alert('Thêm người tham gia không thành công')</script>";
 
     }
 }  

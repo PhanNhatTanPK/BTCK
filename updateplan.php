@@ -76,9 +76,17 @@
    $note1 = $_POST['Note'];
    $file1 = $_POST['File'];
    $userName1= $_POST['Username'];
-   mysqli_query ($conn, "update plan set title='$title1',time='$time1', place='$place1', level='$level1', 
+   $query = mysqli_query ($conn, "update plan set title='$title1',time='$time1', place='$place1', level='$level1', 
                   note='$note1',  file='$file1' ,  id_SV='$userName1' 
                   where id_plan =  $id");
+                  if( $query ){
+                    echo "<script type='text/javascript'> alert('Cập nhật thành công')</script>";
+                }
+                else
+                {
+                    echo "<script type='text/javascript'> alert('Cập nhât không thành công')</script>";
+            
+                }
 ?> 
 <script type="text/javascript">
 window.location=" plan2.php"

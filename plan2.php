@@ -64,7 +64,7 @@ if (isset($_POST['insert'])) {
     <table class="table">
       <thead>
         <tr>
-          <th>STT</th>
+          <th>Mã kế hoạch</th>
           <th>Tên kế hoạch</th>
           <th>Cấp</th>
           <th>Thời gian</th>
@@ -84,7 +84,7 @@ if (isset($_POST['insert'])) {
         {
           echo "<tr>";
           echo "<td>";
-          echo ++$i;
+          echo $row["id_plan"];
           echo "</td>";
           echo "<td>";
           echo $row["title"];
@@ -110,8 +110,8 @@ if (isset($_POST['insert'])) {
           echo $row["id_SV"];
           echo "</td>";
           echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa</button></a> <?php echo "</td>";
-          echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-danger">Xóa</button></a> <?php echo "</td>";
-          echo "<td>"; ?> <a href="detailplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-primary">Chi tiết</button></a> <?php echo "</td>";
+          echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-danger">Xóa</button></a> <?php echo "</td>";
+          echo "<td>"; ?> <a href="detailplan.php?id=<?php echo $row["id_plan"]; ?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-primary">Chi tiết</button></a> <?php echo "</td>";
           echo "</tr>";
                                                                                                                                                     }
                                                                                                                                                       ?>
