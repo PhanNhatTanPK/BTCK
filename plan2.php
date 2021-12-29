@@ -91,6 +91,8 @@
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
       echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-success">Sửa</button></a> <?php echo "</td>";
       echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-danger">Xóa</button></a> <?php echo "</td>";
+      echo "<td>"; ?> <a href="detailplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-primary">Thêm</button></a> <?php echo "</td>";
+
       echo "</tr>";
       }
   ?>
