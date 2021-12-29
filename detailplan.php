@@ -81,7 +81,7 @@ if(isset($_POST['insert'])) {
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
       echo "<td>"; echo $row["position"]; echo "</td>";
       echo "<td>"; echo $row["plus_point"] ; echo "</td>";
-      echo "<td>"; ?> <a href="editdetail.php?id=<?php echo $row["id_plan"];?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa điểm</button></a> <?php echo "</td>";
+      echo "<td>"; ?> <a href="editdetail.php?id=<?php echo $row["id_plan"];?>&idm=<?php echo $_GET["idm"]; ?>&idm2=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa điểm</button></a> <?php echo "</td>";
       echo "</tr>";
       }
   ?>

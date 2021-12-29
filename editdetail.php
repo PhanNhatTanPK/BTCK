@@ -14,19 +14,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/1s/bootstrap.min.js"></script>
 </head>
 <?php
+session_start();
 include('config.php');
 include('headerlogin.php');
  if( isset ($_GET["id"])){
      $id = $_GET["id"];
  }
-   $idm = $_GET["idm"];
+   $idm2 = $_GET["idm2"];
 if(isset($_POST['insert'])) { 
     $point= $_POST['point'];
-    $sql ="update detailed_plan set plus_point='$point' where $id = id_plan AND $idm = id_SV";
+    $sql ="update detailed_plan set plus_point='$point' where $id = id_plan AND $idm2 = id_SV";
     $query =  mysqli_query($conn,$sql);
  ?> 
 <script type="text/javascript">
-window.location="detailplan.php?id=<?php echo $_GET["id"];?>"   
+window.location="detailplan.php?id=<?php echo $_GET["id"];?>&idm=<?php echo $_GET["idm"];?>"   
 </script> 
 <?php
 }          
@@ -54,7 +55,7 @@ window.location="detailplan.php?id=<?php echo $_GET["id"];?>"
     <tbody>
     <?php
     // phần này là phần show data 
-      $res=mysqli_query ($conn, "select * from detailed_plan where  id_plan = $id AND id_SV = $idm");
+      $res=mysqli_query ($conn, "select * from detailed_plan where  id_plan = $id AND id_SV = $idm2");
       while ($row = mysqli_fetch_array ($res))
       {
       echo "<tr>";
