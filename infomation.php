@@ -279,7 +279,7 @@
                             </tr>
                             
                             <tr>
-                                <td><?php echo "Vị trí tham gia hoạt động" ?> </td>
+                                <td>Tư cách tham gia</td>
                                 <?php
                                  $j = 0;
                                  $sql_plan1 = "SELECT position FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="./Image/logovuong.png" type="image/x-icon" />
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Document</title>
+    <title>Chỉnh sửa thông tin cá nhân</title>
 </head>
 <body>
     <?php
@@ -290,7 +291,7 @@
                             </tr>
                             
                             <tr>
-                                <td><?php echo "Vị trí tham gia hoạt động" ?> </td>
+                                <td>Tư cách tham gia</td>
                                 <?php
                                  $j = 0;
                                  $sql_plan1 = "SELECT position FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
