@@ -25,7 +25,7 @@ if (isset($_POST['insert'])) {
   $level =  $_POST['Level'];
   $note = $_POST['Note'];
   $file = $_POST['File'];
-  $userName = $_POST['Username'];
+  $userName = $_SESSION['username'];
   $sql = "INSERT INTO Plan  VALUES (null,'$title','$time','$place',$level,'$note','$file','$userName')";
   $query =  mysqli_query($conn, $sql);
   if ($query) {

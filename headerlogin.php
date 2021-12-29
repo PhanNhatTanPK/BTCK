@@ -31,8 +31,7 @@
                     <li>
                         <a href="./listPlans.php">Kế hoạch </a>
                         <ul class="subnav">
-                        <li><a href="./plan2.php">Creat</a></li>
-                        <li><a href="./updateplan.php">Update</a></li>
+                        <li><a href="./plan2.php">Quản lý kế hoạch</a></li>
                         </ul>
                     </li>
                 </ul>
