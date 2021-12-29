@@ -16,6 +16,7 @@
 </head>
 <?php
 include('config.php');
+session_start();
 include('headerlogin.php');
 if (isset($_POST['insert'])) {
   $title = $_POST['Title'];
@@ -40,7 +41,7 @@ if (isset($_POST['insert'])) {
   <div class="form-style-2">
     <div class="form-style-2-heading">THÊM KẾ HOẠCH MỚI</div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      <label for="field2"><span>Username<span class="required">*</span></span><input type="text" class="input-field" name="Username" value="<?php session_start();
+      <label for="field2"><span>Username<span class="required">*</span></span><input type="text" class="input-field" name="Username" value="<?php
                                                                                                                                             echo $_SESSION['username'] ?>" disabled/></label>
       <label for="field1"><span>Tên kế hoạch<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="" /></label>
 
@@ -108,7 +109,7 @@ if (isset($_POST['insert'])) {
           echo "<td>";
           echo $row["id_SV"];
           echo "</td>";
-          echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-success">Sửa</button></a> <?php echo "</td>";
+          echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa</button></a> <?php echo "</td>";
           echo "<td>"; ?> <a href="deleteplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-danger">Xóa</button></a> <?php echo "</td>";
           echo "<td>"; ?> <a href="detailplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-primary">Chi tiết</button></a> <?php echo "</td>";
           echo "</tr>";

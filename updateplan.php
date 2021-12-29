@@ -14,6 +14,16 @@
    </head>
    <?php
       include('config.php');
+      session_start();
+      if ($_GET["idm"] != $_SESSION['username'])
+      {
+  ?>
+  <script type='text/javascript'> alert('Bạn không phải người quản lý kế hoạch này')</script>
+  <script type="text/javascript">
+  window.location=" plan2.php?id=<?php $_GET["id"];?>"
+  </script>
+  <?php
+      }
       include('headerlogin.php');
      $id=$_GET["id"];
      $title ="";
