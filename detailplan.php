@@ -15,11 +15,13 @@
 </head>
 <?php
 include('config.php');
+include('headerlogin.php');
    $id = $_GET["id"];
 if(isset($_POST['insert'])) { 
     $idsv= $_POST['idsv'];
     $tucach = $_POST['pos'];
-    $sql = "INSERT INTO  detailed_plan VALUES ($id,'$idsv','$tucach',null)";
+
+    $sql = "INSERT INTO  detailed_plan VALUES ($id,'$idsv',$tucach,null)";
     $query =  mysqli_query($conn,$sql);
     if( $query ){
         echo "<script type='text/javascript'> alert('Tạo kế hoạch thành công')</script>";
@@ -50,24 +52,25 @@ if(isset($_POST['insert'])) {
 <table class="table">
     <thead>
       <tr>
-        <th>id-plan</th>
-        <th>idsv</th>
+        <th>Kế hoạch</th>
+        <th>Người tham gia</th>
         <th>Tư cách</th>
-        <th>Edit</th>
+        <th>Điểm</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
     <?php
     // phần này là phần show data 
-      $res=mysqli_query ($conn, "select * from detailed_plan");
+      $res=mysqli_query ($conn, "select * from detailed_plan where id_plan = $id");
       while ($row = mysqli_fetch_array ($res))
       {
       echo "<tr>";
       echo "<td>"; echo $row["id_plan"]; echo "</td>";
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
       echo "<td>"; echo $row["position"]; echo "</td>";
-      echo "<td>"; ?> <a href="updateplan.php?id=<?php echo $row["id_plan"]; ?>"><button type="button" class="btn btn-success">Edit</button></a> <?php echo "</td>";
+      echo "<td>"; echo $row["plus_point"] ; echo "</td>";
+      echo "<td>"; ?> <a href="editdetail.php?id=<?php echo $row["id_plan"];?>&idm=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa điểm</button></a> <?php echo "</td>";
       echo "</tr>";
       }
   ?>
