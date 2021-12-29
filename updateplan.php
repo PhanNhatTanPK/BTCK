@@ -14,6 +14,7 @@
    </head>
    <?php
       include('config.php');
+      include('headerlogin.php');
      $id=$_GET["id"];
      $title ="";
      $time= "";

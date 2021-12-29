@@ -33,7 +33,7 @@ window.location="detailplan.php?id=<?php echo $_GET["id"];?>"
 ?>
 <body>
     <div class="form-style-2">
-        <div class="form-style-2-heading">PLANE KỸ THUẬT PHẦN MỀM K42</div>
+        <div class="form-style-2-heading">NHẬP ĐIỂM</div>
         <form method="post">
         <label for="field2"><span>Điểm<span class="required">*</span></span><input type="text" class="input-field" name="point" value="" /></label>        
             <button class="btn" type="submit" name="insert" class="btn btn-default">Cập nhập</button>
@@ -44,8 +44,8 @@ window.location="detailplan.php?id=<?php echo $_GET["id"];?>"
 <table class="table">
     <thead>
       <tr>
-        <th>id-plan</th>
-        <th>idsv</th>
+        <th>Kế hoạch</th>
+        <th>Người tham gia</th>
         <th>Tư cách</th>
         <th>Điểm</th>
         <th></th>
@@ -54,7 +54,7 @@ window.location="detailplan.php?id=<?php echo $_GET["id"];?>"
     <tbody>
     <?php
     // phần này là phần show data 
-      $res=mysqli_query ($conn, "select * from detailed_plan where  id_plan = $id ");
+      $res=mysqli_query ($conn, "select * from detailed_plan where  id_plan = $id AND id_SV = $idm");
       while ($row = mysqli_fetch_array ($res))
       {
       echo "<tr>";

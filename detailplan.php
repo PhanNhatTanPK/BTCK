@@ -35,16 +35,16 @@ if(isset($_POST['insert'])) {
 ?>
 <body>
     <div class="form-style-2">
-        <div class="form-style-2-heading">PLANE KỸ THUẬT PHẦN MỀM K42</div>
+        <div class="form-style-2-heading">THÊM THÀNH VIÊN THAM GIA HOẠT ĐỘNG</div>
         <form method="post">
         <label for="field2"><span>Mã sinh viên <span class="required">*</span></span><input type="text" class="input-field" name="idsv" value="" /></label>        
         <label for="field4"><span>Tư cách</span><select name="pos" class="select-field" value="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option value="1">Cổ vũ</option>
+                    <option value="2">Tham gia</option>
+                    <option value="3">Có giải</option>
+                    <option value="4">BTC</option>
                 </select></label>
-            <button class="btn" type="submit" name="insert" class="btn btn-default">Insert</button>
+            <button class="btn" type="submit" name="insert" class="btn btn-default">Thêm</button>
         </form>
     </div>
 </body>
