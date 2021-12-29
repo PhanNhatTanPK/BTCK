@@ -64,47 +64,47 @@ html{
  
 }
 
-.nav .tkb{
+.anhead .tkb{
    margin-left: 180px;
 }
-.nav, .subnav{
+.anhead, .subanhead{
     list-style: none;
     
 }
-.nav > li {
+.anhead > li {
     display: inline-block;
 }
-.nav li {
+.anhead li {
 
 position: relative;
 }
-.nav >li> a{
+.anhead >li> a{
     color: white;
 }
-.nav li a {
+.anhead li a {
     text-decoration: none;
     line-height: 80px;
     padding: 0 24px;
     display: block;
 }   
-.nav >li:hover> a{
+.anhead >li:hover> a{
     color:white;
     opacity: 0.5;
 }
-.nav >li:hover> a
-,.nav .subnav li:hover a{
+.anhead >li:hover> a
+,.anhead .subanhead li:hover a{
     border-radius: 5%;
 }
-.nav .subnav li:hover a{
+.anhead .subanhead li:hover a{
     color: white;
     background-color: silver;
     
 }
-.nav li:hover .subnav{
+.anhead li:hover .subanhead{
     display: block;
     
 }
-.nav .subnav{
+.anhead .subanhead{
     position: absolute;
     background-color: white;
     box-shadow:  0 0 10px rgba(0 , 0 , 0 , 0.3);
@@ -114,13 +114,13 @@ position: relative;
     border-radius: 5%;
     width: 200px;
 }
-.nav .subnav a {
+.anhead .subanhead a {
 color: black;
 width: 200px;
 padding: 0 12px
 
 }
-.nav{
+.anhead{
     display: inline-block;
 }
 
@@ -135,7 +135,7 @@ padding: 0 12px
 .logo{
     float: left;
 }
-.nav i {
+.anhead i {
     margin-left: 20px;
 }
 /* chuyen hinh */

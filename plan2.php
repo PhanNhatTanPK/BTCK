@@ -115,7 +115,6 @@ if (isset($_POST['insert'])) {
           echo "</tr>";
                                                                                                                                                     }
                                                                                                                                                       ?>
-
     </table>
   </div>
 </body>

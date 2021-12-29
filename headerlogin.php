@@ -20,23 +20,23 @@
                 <div class="logo">
                     <img height="100%" width="200px" src="Image/logocave.png"" />
                 </div>
-                <ul class="nav">
+                <ul class="anhead">
                     <!-- beggin : nav -->
                     <li class="tkb"><a href="./index.php">Trang chủ</a></li>
                     <li>
                         <a href="./listStudents.php">Danh sách sinh viên </a>
-                        <ul class="subnav">
+                        <ul class="subanhead">
                         </ul>
                     </li>
                     <li>
                         <a href="./listPlans.php">Kế hoạch </a>
-                        <ul class="subnav">
+                        <ul class="subanhead">
                         <li><a href="./plan2.php">Quản lý kế hoạch</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="login">
-                    <ul class="nav">
+                    <ul class="anhead">
                         <li>
                             <a href=""><i class="fa fa-user-circle" style="margin-right: 5px;"></i>
                                 <?php
@@ -48,7 +48,7 @@
                                 }
                                 ?>
                             </a>
-                            <ul class="subnav">
+                            <ul class="subanhead">
                                 <li><a href="./infomation.php">THÔNG TIN CÁ NHÂN</a></li>
                                 <li><a href="./logout.php">ĐĂNG XUẤT</a></li>
                             </ul>
