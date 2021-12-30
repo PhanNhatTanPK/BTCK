@@ -45,7 +45,7 @@
                 </ul>
             </div>
             <div class="grid-column2">
-                <h3 class="footer-heading">LINK LIÊN KẾT</table></h3>
+                <h3 class="footer-heading">LINK LIÊN KẾT</h3>
                 <ul class="footer-list">
                     <li class="footer-lienhe">
                         <a href="https://www.facebook.com/groups/756089674811890" class="footer-link">
