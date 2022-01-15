@@ -48,8 +48,10 @@
                 $fileSize = $_FILES['image']['size'];
                 $fileTmp = $_FILES['image']['tmp_name'];
                 $fileType = $_FILES['image']['type'];
-            
-                if(isset($fileName) && !empty($fileName)){            
+
+                // Nếu tồn tại file ảnh thì mới thực hiện thay ảnh 
+                if(isset($fileName) && !empty($fileName)){  
+                    // Kiểm tra kích thước ảnh có phù hợp hay không   
                     if($fileSize > $maxSize) {
                         $errors['img'] = 'Kích thước file không được lớn hơn 5MB';
                     }
