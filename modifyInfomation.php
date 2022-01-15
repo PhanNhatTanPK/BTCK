@@ -41,7 +41,7 @@
              
 
             // Lưu ảnh đại diện
-                $maxSize = 1024000;
+                $maxSize = 5242880;
     
                 // Lấy thông tin ảnh được tải lên
                 $fileName = $_FILES['image']['name'];
@@ -51,7 +51,7 @@
             
                 if(isset($fileName) && !empty($fileName)){            
                     if($fileSize > $maxSize) {
-                        $errors['img'] = 'Kích thước file không được lớn hơn 10MB';
+                        $errors['img'] = 'Kích thước file không được lớn hơn 5MB';
                     }
                     else {
                         $target = "Image/" . $_FILES['image']['name'];
@@ -200,8 +200,7 @@
 
                                     while($row = mysqli_fetch_array($point)) {
                                         if($a == 1) {
-                                             echo "</th>";
-                                             
+                                            echo "</th>";      
                                             $a = 0;
                                         }    
                                 ?>
@@ -217,13 +216,13 @@
                             <tr>
                                 <td>Tín chỉ</td>
                                 <?php
-                                 $j = 0;
-                                 $sql_credit = "SELECT no_credit FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
-                                 $credit = mysqli_query($conn,$sql_credit);
+                                    $j = 0;
+                                    $sql_credit = "SELECT no_credit FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                                    $credit = mysqli_query($conn,$sql_credit);
 
-                                while($row = mysqli_fetch_array($credit)) {
+                                    while($row = mysqli_fetch_array($credit)) {
                                         if($j == 1) {
-                                             echo "</td>";
+                                            echo "</td>";
                                             $j = 0;;
                                         }
                                 ?>
@@ -239,13 +238,13 @@
                             <tr>
                                 <td>Điểm</td>
                                 <?php
-                                 $j = 0;
-                                 $sql_point1 = "SELECT point FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
-                                 $point1 = mysqli_query($conn,$sql_point1);
+                                    $j = 0;
+                                    $sql_point1 = "SELECT point FROM score, subject WHERE score.id_subject = subject.id_subject AND id_SV = $_SESSION[username]";
+                                    $point1 = mysqli_query($conn,$sql_point1);
 
-                                while($row = mysqli_fetch_array($point1)) {
+                                    while($row = mysqli_fetch_array($point1)) {
                                         if($j == 1) {
-                                             echo "</td>";
+                                            echo "</td>";
                                             $j = 0;;
                                         }
                                 ?>
@@ -293,13 +292,13 @@
                             <tr>
                                 <td>Tư cách tham gia</td>
                                 <?php
-                                 $j = 0;
-                                 $sql_plan1 = "SELECT position FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
-                                 $plan1 = mysqli_query($conn,$sql_plan1);
+                                    $j = 0;
+                                    $sql_plan1 = "SELECT position FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                                    $plan1 = mysqli_query($conn,$sql_plan1);
 
-                                while($row = mysqli_fetch_array($plan1)) {
+                                    while($row = mysqli_fetch_array($plan1)) {
                                         if($j == 1) {
-                                             echo "</td>";
+                                            echo "</td>";
                                             $j = 0;;
                                         }
                                 ?>
@@ -329,13 +328,13 @@
                             <tr>
                                 <td><?php echo "Điểm cộng" ?> </td>
                                 <?php
-                                 $j = 0;
-                                 $sql_plan2 = "SELECT plus_point FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
-                                 $plan2 = mysqli_query($conn,$sql_plan2);
+                                    $j = 0;
+                                    $sql_plan2 = "SELECT plus_point FROM plan, detailed_plan WHERE plan.id_plan = detailed_plan.id_plan AND detailed_plan.id_SV = $_SESSION[username]";
+                                    $plan2 = mysqli_query($conn,$sql_plan2);
 
-                                while($row = mysqli_fetch_array($plan2)) {
+                                    while($row = mysqli_fetch_array($plan2)) {
                                         if($j == 1) {
-                                             echo "</td>";
+                                            echo "</td>";
                                             $j = 0;;
                                         }
                                 ?>

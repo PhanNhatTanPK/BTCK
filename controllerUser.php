@@ -71,9 +71,7 @@ if(isset($_POST['signup'])){
             if($run_query){
                 $subject = "Password Reset Code";
                 $message = "Your password reset code is $code";
-                $sender = "From: ktpmk42.qnu@gmail.com" . "\r\n" .
-                            "MIME-Version: 1.0" . "\r\n" . 
-                            "Content-type: text/html; charset = utf-8";
+                $sender = "From: ktpmk42.qnu@gmail.com" ;
                 if( mail($email, $subject, $message, $sender)){
                     $info = "Chúng tôi đã gửi mã OTP tới email của bạn - $email";
                     $_SESSION['info'] = $info;
