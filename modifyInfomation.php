@@ -97,7 +97,7 @@
                 <p class="sub pd10">Lớp Kỹ thuật phần mềm-K42</p>  
                 <div class="">
                     <label class ="modify-btn" for="upload"> <i class="fa fa-camera" style="padding: 5px 0 5px 20px "></i> Đổi ảnh đại diện</label>
-                    <input id="upload" type="file" name="image">                                                                                                             
+                    <input id="upload" type="file" name="image" accept=".jpg, .png, .gif">                                                                                                             
                 </div>               
             </div>
         </div>
