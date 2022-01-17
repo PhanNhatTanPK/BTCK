@@ -48,7 +48,7 @@
                 }
             }
  
-            // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+            // nếu current_page < $total_page và total_page > 1 mới hiển thị nút next
             if ($current_page < $total_page && $total_page > 1)
             {
                 echo '<a class="NextPrev" href="index.php?search='.$search.'&page='.($current_page+1).'">Next</a>';
