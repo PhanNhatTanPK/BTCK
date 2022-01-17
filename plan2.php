@@ -41,7 +41,7 @@ if (isset($_POST['insert'])) {
   <div class="form-style-2">
     <div class="form-style-2-heading">THÊM KẾ HOẠCH MỚI</div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      <label for="field2"><span>Username<span class="required">*</span></span><input type="text" class="input-field" name="Username" value="<?php
+      <label for="field2"><span>Mã sinh viên<span class="required">*</span></span><input type="text" class="input-field" name="Username" value="<?php
                                                                                                                                             echo $_SESSION['username'] ?>" disabled/></label>
       <label for="field1"><span>Tên kế hoạch<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="" /></label>
 
