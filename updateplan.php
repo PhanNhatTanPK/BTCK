@@ -50,7 +50,7 @@
 <div class="form-style-2">
 <div class="form-style-2-heading">Sửa kế hoạch</div>
 <form method="post">
-<label for="field2"><span>Người tạo<span class="required">*</span></span><input type="text" class="input-field" name="Username"value="<?php echo  $username;  ?>"/></label>
+<label for="field2"><span>Người tạo<span class="required">*</span></span><input type="text" class="input-field" name="Username"value="<?php echo  $username;  ?>" disabled/></label>
 <label for="field1"><span>Tên hoạt động<span class="required">*</span></span><input type="text" class="input-field" name="Title" value="<?php echo $title;  ?>" /></label>
 <label for="field4"><span>Cấp</span><select name="Level" class="select-field" value="<?php echo   $level;  ?>">
 <option value="1">Lớp</option>
