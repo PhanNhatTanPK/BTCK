@@ -79,7 +79,11 @@ if(isset($_POST['insert'])) {
       echo "<tr>";
       echo "<td>"; echo $row["id_plan"]; echo "</td>";
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
-      echo "<td>"; echo $row["position"]; echo "</td>";
+      echo "<td>"; if($row["position"] == 1) { echo "Cổ vũ";}  
+                   elseif($row["position"] == 2) { echo "Tham gia";} 
+                   elseif($row["position"] == 3) { echo "Có giải";}
+                   else{ echo "BTC";}
+      echo "</td>";
       echo "<td>"; echo $row["plus_point"] ; echo "</td>";
       echo "<td>"; ?> <a href="editdetail.php?id=<?php echo $row["id_plan"];?>&idm=<?php echo $_GET["idm"]; ?>&idm2=<?php echo $row["id_SV"]; ?>"><button type="button" class="btn btn-success">Sửa điểm</button></a> <?php echo "</td>";
       echo "</tr>";
