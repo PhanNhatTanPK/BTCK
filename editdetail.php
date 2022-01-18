@@ -61,7 +61,11 @@ window.location="detailplan.php?id=<?php echo $_GET["id"];?>&idm=<?php echo $_GE
       echo "<tr>";
       echo "<td>"; echo $row["id_plan"]; echo "</td>";
       echo "<td>"; echo $row["id_SV"]; echo "</td>";
-      echo "<td>"; echo $row["position"]; echo "</td>";
+      echo "<td>";if($row["position"] == 1) { echo "Cổ vũ";}  
+      elseif($row["position"] == 2) { echo "Tham gia";} 
+      elseif($row["position"] == 3) { echo "Có giải";}
+      else{ echo "BTC";}
+     echo "</td>";
       echo "<td>"; echo $row["plus_point"]; echo "</td>";
       echo "</tr>";
       }
